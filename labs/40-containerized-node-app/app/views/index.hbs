@@ -36,23 +36,59 @@
 
 <body>
   <h1>QuoteBoard</h1>
-
+  <img src="../assets/cristiano-ronaldo.png" alt="Ronaldo">
+  <img src="../assets/mourinho.png" alt="Mourinho">
   <form method="post" action="/quotes">
     <input name="author" placeholder="Author (optional)" />
     <textarea name="text" placeholder="Write a quote..." required></textarea>
-    <button type="submit">Add quote</button>
+    <button type="submit" class="btn-quote">Add quote</button>
   </form>
 
   {{#if quotes.length}}
   {{#each quotes}}
   <div class="quote">
-    <div>{{this.text}}</div>
-    <div>— {{this.author}}</div>
+    <div class="quote-text">{{this.text}}</div>
+    <div class="quote-author">— {{this.author}}</div>
   </div>
   {{/each}}
   {{else}}
   <p>No quotes yet. Add the first one.</p>
   {{/if}}
+  <style>
+    h1 {
+      text-decoration: underline;
+      text-align: center;
+    }
+    input {
+      border: 2px solid#885527;
+      border-radius: 10px;
+      font-size: 16px;
+      padding: 5px;
+    }
+    textarea {
+      border: 2px solid#885527;
+      border-radius: 10px;
+      font-size: 16px;
+      padding: 5px;
+    }
+    .btn-quote {
+      background-color: #885527;
+      color: whitesmoke;
+      border-radius: 50px;
+      font-weight: bold;
+      border: none;
+      padding: 10px;
+      width: 20%;
+      cursor: pointer;
+    }
+    .quote-text {
+      font-style: italic;
+    }
+    .quote-author {
+      font-weight: bold;
+      color: #885527;
+    }
+  </style>
 </body>
 
 </html>
