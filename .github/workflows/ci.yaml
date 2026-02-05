@@ -28,17 +28,22 @@ jobs:
       - name: Build Docker image
         run: docker build -t quote-app -f labs/40-containerized-node-app/docker/Dockerfile .
 
+      - name: Installer jq
+        run: sudo apt-get update && sudo apt-get install -y jq
+
       - name: Run container
         run: |
           docker run -d --name quote-app -p 3000:3000 quote-app
           for i in $(seq 1 30); do
-            if curl -fsS http://localhost:3000/health >/dev/null; then
-              echo "Health check passed"
+            response=$(curl -fsS http://localhost:3000/health || true)
+
+            if echo "$response" | jq -e '.status == "healthy"' > /dev/null 2>&1; then
+              echo "La vérification de l'état a réussi"
               exit 0
             fi
             sleep 1
           done
-          echo "Health check failed"
+          echo "La vérification de l'état a échoué"
           docker logs quote-app || true
           exit 1
 
