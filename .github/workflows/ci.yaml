@@ -41,7 +41,7 @@ jobs:
               echo "La vérification de l'état a réussi"
               exit 0
             fi
-            sleep 1
+            sleep 5
           done
           echo "La vérification de l'état a échoué"
           docker logs quote-app || true
