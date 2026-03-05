@@ -32,8 +32,8 @@ L'isolation se passe au **niveau des pods**, chaque pod fonctionne indépendamme
 **Les pods** redémarrent automatiquement si un **container** à l’intérieur d’un pod échoue.
 
 #### 2.4 What does Kubernetes not manage?
-**Kubernetes** ne gère pas la **persistence des données** de façon native, ce qui est à gérer par des **volumes persistants**.
-- Il ne gère pas les aspects externes du réseau ou de la sécurité, comme les **firewalls** et les **politiques de sécurité réseau**.
+**Kubernetes** ne gère pas la **persistance des données** de façon native, ce qui est à gérer par des **volumes persistants**.
+Il ne gère pas les aspects externes du réseau ou de la sécurité, comme les **firewalls** et les **politiques de sécurité réseau**.
 
 ## Step 3 : Compare Containers and Virtual Machines
 
