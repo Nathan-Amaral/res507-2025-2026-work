@@ -141,7 +141,7 @@ Liveness:
 - Better availability
 - Zero-downtime deployments
 
-# Step 8 – Connect Kubernetes to Virtualization
+# Connect Kubernetes to Virtualization
 
 ## What runs underneath k3s?
 
